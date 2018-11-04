@@ -3,9 +3,7 @@
 //If input number is even
 //Divide by 2
 
-let amountOfLoops = 10;
-let arrayOfNumbers = [];
-
+//This first function finds an output based on whether the input is odd or even
 function recursion(input) {
     if (input % 2 == 0) {
         return input = (input / 2);
@@ -14,14 +12,11 @@ function recursion(input) {
     }
 
 } 
-// function recursion2(input2) {
-//     return input2 += 4;
-// }
 
-
-// console.log(recursion2(recursion(2)));
-// 10 to 5 to 16
-
+//This function rewrites the recursion function automatically
+//howManyTimes writes everything, but the x, example: recursion(recursion(recursion(x)));
+//Count fills in x with a starting value, usually 1, example: recursion(recursion(recursion(1)));
+//The example expression was written from: recursionAgain(3, 1);
 function recursionAgain(howManyTimes, count) {
     let firstHalf = "";
     let secondHalf = "";
@@ -29,32 +24,7 @@ function recursionAgain(howManyTimes, count) {
         firstHalf += 'recursion(';
         secondHalf += ')';
     }
-    const recursiveExpression = firstHalf + count + secondHalf + ';';
+    let recursiveExpression = firstHalf + count + secondHalf + ';';
+    recursiveExpression = eval(recursiveExpression)
     return recursiveExpression;
 }
-
-obj = eval(recursionAgain(2, 2));
-console.log(recursionAgain(2,3));
-// console.log(recursion(recursion(recursion(3))));
-for (let n = 1; n < amountOfLoops; n++) {
-    // arrayOfNumbers.push(recursion(i));
-}
-
-// var factor = function(number) {
-//     var result = 1;
-//     var count;
-//     for (count = number; count > 1; count--) {
-//         if (number % 2 != 0) {
-//              result = (number * 3) + 1;
-//         } else {
-//              result = (number / 2);
-//         }
-//     return result;
-//   }};
-
-
-
-let add = function(n) {
-    return recursion(n-1);
-}
-
